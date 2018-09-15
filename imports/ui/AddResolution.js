@@ -49,7 +49,7 @@ export default class AddResolution extends Component {
                       createResolution: {
                         __typename: "Resolution",
                         name: input.value,
-                        _id: "123"
+                        _id: null
                       }
                     }
                   });
