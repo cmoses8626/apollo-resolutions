@@ -29,7 +29,6 @@ export default class AddResolution extends Component {
         mutation={CREATE_RESOLUTION}
         update={(cache, { data: { createResolution } }) => {
           const { resolutions } = cache.readQuery({ query: GET_RESOLUTIONS });
-          console.log(createResolution);
           cache.writeQuery({
             query: GET_RESOLUTIONS,
             data: { resolutions: resolutions.concat([createResolution]) }
@@ -49,7 +48,7 @@ export default class AddResolution extends Component {
                       createResolution: {
                         __typename: "Resolution",
                         name: input.value,
-                        _id: "123"
+                        _id: null
                       }
                     }
                   });

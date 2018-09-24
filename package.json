@@ -1,31 +1,31 @@
 {
-  "name": "apollo",
+  "name": "apollo-resolutions",
   "private": true,
   "scripts": {
     "start": "meteor run"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "apollo": "^1.7.1",
-    "apollo-boost": "^0.1.14",
-    "apollo-client": "^2.4.1",
-    "apollo-server": "^2.0.5",
-    "apollo-server-express": "^2.0.4",
+    "apollo": "^1.9.2",
+    "apollo-boost": "^0.1.16",
+    "apollo-client": "^2.4.2",
+    "apollo-server": "^2.1.0",
+    "apollo-server-express": "^2.1.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "graphql": "^0.13.2",
     "graphql-server-express": "^1.4.0",
     "graphql-tag": "^2.9.2",
     "graphql-tools": "^3.1.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "meteor-node-stubs": "^0.4.1",
-    "prettier": "^1.14.2",
-    "react": "^16.4.2",
+    "prettier": "^1.14.3",
+    "react": "^16.5.2",
     "react-apollo": "^2.1.11",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.5.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.1.0",
     "babel-plugin-inline-import": "^3.0.0"
   },
   "babel": {

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
+import DeleteResolution from "./DeleteResolution";
 
 const GET_RESOLUTIONS = gql`
   {
@@ -11,24 +12,28 @@ const GET_RESOLUTIONS = gql`
   }
 `;
 
-const ResolutionsList = () => (
-  <Query query={GET_RESOLUTIONS}>
-    {({ loading, error, data }) => {
-      if (loading) return <p>Loading...</p>;
-      if (error) return <p>Error</p>;
+export default class ResolutionsList extends Component {
+  render() {
+    return (
+      <Query query={GET_RESOLUTIONS}>
+        {({ loading, error, data }) => {
+          if (loading) return <p>Loading...</p>;
+          if (error) return <p>Error</p>;
 
-      return (
-        <>
-          <h2>{data.hi}</h2>
-          <ul>
-            {data.resolutions.map(resolution => (
-              <li key={resolution._id}>{resolution.name}</li>
-            ))}
-          </ul>
-        </>
-      );
-    }}
-  </Query>
-);
-
-export default ResolutionsList;
+          return (
+            <>
+              <ul>
+                {data.resolutions.map(resolution => (
+                  <li key={resolution._id}>
+                    {resolution.name}
+                    <DeleteResolution _id={resolution._id} />
+                  </li>
+                ))}
+              </ul>
+            </>
+          );
+        }}
+      </Query>
+    );
+  }
+}

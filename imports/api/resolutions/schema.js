@@ -13,6 +13,7 @@ export const schema = makeExecutableSchema({
     }
     type Mutation {
       createResolution(name: String!): Resolution
+      deleteResolution(_id: String!): String
     }
   `
 });
@@ -24,10 +25,13 @@ export const resolvers = {
     }
   },
   Mutation: {
-    createResolution(obj, args) {
-      const { name } = args;
+    createResolution(obj, { name }) {
       const resolutionId = Resolutions.insert({ name });
       return { name, _id: resolutionId };
+    },
+    deleteResolution(obj, { _id }) {
+      const resolutionId = Resolutions.remove({ _id });
+      return "this is my resolutionId??";
     }
   }
 };
